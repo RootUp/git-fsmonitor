@@ -1,4 +1,4 @@
-***This is a documented issue, but I found this during my research & its pretty useful.***
+***This is a documented (known) issue, but I found this during my research & its pretty useful.***
 
 **Summary:** The FSMonitor helper is executed by `git` on every command like `git status`, `git diff`, etc., hence `git` will blindly lauch whatever path we specfic there. Our IDEs runs `git status` automatically the moment you open a folder to populate its SCM (Source Control Management) panel; 
 
